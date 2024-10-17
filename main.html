@@ -13,31 +13,14 @@
 			if(arr.length<=1){
     return "-Infinity"
   }else{
-    let first_max;
-    let second_max;
-    if(arr[0]>=arr[1]){
-      first_max = arr[0];
-      second_max=arr[1];
-
-    }else{
-      first_max = arr[1];
-      second_max=arr[0];
-      
-    }
-    
-    arr.forEach((currEle,index) => {
-      if(index>=1){
-        if(currEle>=first_max){
-          second_max = first_max;
-          first_max = currEle;
-        }else if(currEle>second_max){
-          second_max = currEle;
-        }
-      }
-    })
-
-    return second_max;
-
+    arr.sort();
+	let first_max = arr[-1];
+	let second_max = arr[-2];
+	if(first_max===second_max){
+		return "-Infinity";
+}else{
+		return second_max;
+}
 		}
 
 		function Main() {
