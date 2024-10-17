@@ -13,9 +13,9 @@
 			if(arr.length<=1){
     return ["-Infinity"];
   }else{
-    arr.sort();
-	let first_max = arr[-1];
-	let second_max = arr[-2];
+    let arr = arr.map(Number).sort((a, b) => b - a);
+	let first_max = arr[arr.length-1];
+	let second_max = arr[arr.length-2];
 	if(first_max===second_max){
 		return ["-Infinity"];
 }else{
